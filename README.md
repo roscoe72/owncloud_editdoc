@@ -1,7 +1,7 @@
 owncloud_editdoc
 ================
-EditDoc is a WYSIWYG Editor for ownCloud. EditDoc is based on TinyMCE (GNU LESSER GENERAL PUBLIC LICENSE)
-
+EditDoc is a WYSIWYG Editor plugin for ownCloud 5.x.
+EditDoc is based on TinyMCE (GNU LESSER GENERAL PUBLIC LICENSE).
 
 Cheers
 Erwin
