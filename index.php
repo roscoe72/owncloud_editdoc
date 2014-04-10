@@ -24,8 +24,10 @@ if (\OC\Files\Filesystem::isUpdatable($filepath)==0) {
 };
 ?>
 
-<script type="text/javascript" src="<?php echo OCP\Util::linkTo('apps/editdoc/tinymce4','tinymce.min.js');?>"></script>
+<script type="text/javascript" src="<?php echo OCP\Util::linkTo('editdoc','js/vendor/tinymce4/tinymce.min.js');?>"></script>
 <script type="text/javascript">
+ tinymce.baseURL = "<?php echo \OCP\Util::linkTo('editdoc', 'js/vendor/tinymce4') ?>";
+ tinymce.cssbaseURL = "<?php echo \OC::$WEBROOT.'/index.php/apps/editdoc/css/vendor/tinymce4' ?>";
  tinymce.init({
   selector: "textarea",
   statusbar: false,
