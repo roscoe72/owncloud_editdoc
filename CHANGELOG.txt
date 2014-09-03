@@ -1,0 +1,11 @@
+Known Issue:
+- Including shared images in EditDoc documents only works as shared folder is a primary user folder (eg /files/[USER]/[SHARED FOLDER])
+
+Changelog:
+- Works with Owncloud 7 
+- EditDoc language files (for now.. Dutch, English and German. Please send new language files to me. I will include them in the package)
+- Insert and Select Images from ownCloud user repository
+- TinyMCE 4.1.4
+- Code optimalisation
+- Adding EditDoc Quick Start feature. Browse to 'http://[YOURSERVER]/apps/editdoc/'
+
