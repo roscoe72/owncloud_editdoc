@@ -2,9 +2,9 @@
 <info>
 	<id>editdoc</id>
 	<name>EditDoc</name>
-	<description>EditDoc is a WYSIWYG Editor for ownCloud. The editor is based on TinyMCE (GNU LESSER GENERAL PUBLIC LICENSE)</description>
+	<description>EditDoc is a WYSIWYG Editor for ownCloud 7.x. The editor is based on TinyMCE (GNU LESSER GENERAL PUBLIC LICENSE)</description>
 	<licence>AGPL</licence>
-	<require>5.00</require>
+	<require>7.00</require>
 	<author>Erwin Koekoek</author>
         <types>
                 <filesystem/>
