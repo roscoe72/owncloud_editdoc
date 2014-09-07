@@ -1,31 +1,36 @@
 $(document).ready(function() {
 
-	if (typeof FileActions !== 'undefined') {
-		FileActions.register('text/html', 'EditDoc',OC.PERMISSION_READ,
+	if (typeof OCA.Files.fileActions !== 'undefined') {
+		OCA.Files.fileActions.register('text/html', 'EditDoc',OC.PERMISSION_READ,
 			function(){return OC.imagePath('core','actions/play')},
 			function(filename) {
 				if(FileActions.getCurrentMimeType() == 'text/html') {
 					startEditDoc($('#dir').val(),filename);
-				};
-			});
+				}
+			}
+		);
 
-		FileActions.register('text/html', 'EditHTML', OC.PERMISSION_READ, '',
+		OCA.Files.fileActions.register('text/html', 'EditHTML', OC.PERMISSION_READ, '',
 			function(filename) {
 				if(FileActions.getCurrentMimeType() == 'text/html') {
 					startEditDoc($('#dir').val(),filename);
 				}
-			});
+			}
+		);
 
-		FileActions.setDefault('text/html','EditHTML');
+		OCA.Files.fileActions.setDefault('text/html','EditHTML');
 	}
 
 	//New file menu item
 	if($('div#new>ul>li').length > 0) {
-		Files.getMimeIcon('text/html', function(icon) {
+		$.get( OC.filePath('files','ajax','mimeicon.php'), {mime: 'text/html'}, function(path) {
+			if(OC.Util.hasSVGSupport()){
+				path = path.substr(0, path.length-4) + '.svg';
+			}
 			$('<li><p>EditDoc file</p></li>')
 				.attr('id', 'newEditDocLi')
 				.appendTo('div#new>ul')
-				.css('background-image', 'url(' + icon + ')')
+				.css('background-image', 'url(' + path + ')')
 				.data('type', 'text')
 				.children('p')
 				.click(function() {

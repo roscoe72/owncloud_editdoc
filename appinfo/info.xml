@@ -4,8 +4,8 @@
 	<name>EditDoc</name>
 	<description>EditDoc is a WYSIWYG Editor for ownCloud. The editor is based on TinyMCE (GNU LESSER GENERAL PUBLIC LICENSE)</description>
 	<licence>AGPL</licence>
-	<require>5.00</require>
-	<author>Erwin Koekoek</author>
+	<require>7.00</require>
+	<author>Erwin Koekoek, Jörn Friedrich Dreyer</author>
 	<types>
 			<filesystem/>
 	</types>
