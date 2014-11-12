@@ -1,4 +1,7 @@
 Changelog:
+12 nov 2014
+- Added EditDoc French language file (l10n/fr.php)
+
 8 sept 2014:
 - Added EditDoc Spanish language file (l10n/es.php)
 
