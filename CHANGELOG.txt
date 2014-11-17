@@ -1,4 +1,7 @@
 Changelog:
+17 nov 2014
+- When opening EditDoc a blank page with no WISIWYG menu. See known issues nr2 for the solution.
+
 12 nov 2014
 - Added EditDoc French language file (l10n/fr.php)
 
@@ -14,4 +17,19 @@ Changelog:
 - Adding EditDoc Quick Start feature. Browse to 'http://[YOURSERVER]/apps/editdoc/'
 
 Known Issue:
-- Including shared images in EditDoc documents only works as shared folder is a primary user folder (eg /files/[USER]/[SHARED FOLDER])
+1. Including shared images in EditDoc documents only works as shared folder is a primary user folder (eg /files/[USER]/[SHARED FOLDER])
+2. When opening EditDoc in Firefox, Chrome, eg a blank page with no WISIWYG menu. This is due to the webbrowser Content-Security-Policy (CSP). CSP is enabled in the lateste webbrowsers. 
+There are two solutions to this issue:
+Option1. In firefox you can disable CSP. Open in address bar 'about:config' and search for 'security.csp.enable' and turn it off.
+Option2. Global disable CSP on the owncloud webserver. This can be disabled by adding the custom_csp_policy in the owncloud config.php. 
+
+Place these lines in the $CONFIG Array section in the http://[YOURSERVER]/config/config.php file
+$CONFIG = array (...
+...
+/* Custom CSP policy, changing this will overwrite the standard policy */
+'custom_csp_policy' => "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; frame-src *; img-src *; font-src 'self' data:; media-src *",
+...
+);
+
+
+
